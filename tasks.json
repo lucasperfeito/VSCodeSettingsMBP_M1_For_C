@@ -1,0 +1,40 @@
+{
+    "tasks": [
+		{
+            "type": "cppbuild",
+            "label": "C/C++: clang générer le fichier actif",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compilateur : /usr/bin/clang"
+        },
+		{
+            "type": "shell",
+            "label": "cppcompile4debug",
+            "command": "cd",
+            "args": [
+                "${fileDirname}","&&","g++","-std=c++20","-g","*.cpp","-o","exec"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compilation pour débuggage"
+        }
+    ],
+    "version": "2.0.0"
+}
